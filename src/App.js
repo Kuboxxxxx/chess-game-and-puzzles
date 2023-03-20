@@ -1,8 +1,15 @@
+import { BrowserRouter } from "react-router-dom";
+import { AppRoutes } from "./AppRoutes";
+
 import { ChessGame } from "./components/ChessGame";
-import { Home } from "./components/Home";
+import { NavigationBar } from "./components/NavigationMenu";
 
 export const App = () => {
   return <div>
-    <Home />
+    <BrowserRouter>
+    <NavigationBar />
+
+    <AppRoutes />
+    </BrowserRouter>
   </div>;
 };
