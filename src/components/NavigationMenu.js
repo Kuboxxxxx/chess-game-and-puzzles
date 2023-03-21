@@ -14,13 +14,12 @@ export const NavigationBar = () =>  {
     
     
     return (
-        <div style={{ backgroundImage: `url(${ MenuBackground })`, backgroundSize: "cover", backgroundPosition: "0% -65%" }} role="presentation" onClick={handleClick}>
+        <div style={{ backgroundImage: `url(${ MenuBackground })`, backgroundSize: "cover", backgroundPosition: "0% 30%", backgroundRepeat: "no-repeat" }} role="presentation" onClick={handleClick}>
             <Breadcrumbs  aria-label="breadcrumb"
             sx={{ 
                 border: 1,
                 p: 3,
                 boxShadow: 4,
-                borderRadius: '15px',
                 fontWeight: 'bold'
             }}
             >
