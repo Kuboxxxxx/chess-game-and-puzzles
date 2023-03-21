@@ -33,5 +33,9 @@ export const ChessGame = () => {
     return true;
   };
 
-  return <Chessboard position={game.fen()} onPieceDrop={onDrop} />;
+  return (
+    <div className="chess">
+      <Chessboard position={game.fen()} onPieceDrop={onDrop} />
+    </div>
+  );
 };
