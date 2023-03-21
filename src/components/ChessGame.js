@@ -4,17 +4,17 @@ import { Chess } from "chess.js";
 
 export const ChessGame = () => {
   const [game, setGame] = useState(new Chess());
-
+  console.log(game);
   const makeAMove = (move) => {
-    const gameCopy = { ...game };
-    const result = gameCopy.move(move);
-    setGame(gameCopy);
+    // const gameCopy = { ...game };
+    const result = game.move(move);
+    setGame(result);
     return result; // null if the move was illegal, the move object if the move was legal
   };
 
   const makeRandomMove = () => {
     const possibleMoves = game.moves();
-    if (game.game_over() || game.in_draw() || possibleMoves.length === 0)
+    if (game.isGameOver() || game.isDraw() || possibleMoves.length === 0)
       return; // exit if the game is over
     const randomIndex = Math.floor(Math.random() * possibleMoves.length);
     makeAMove(possibleMoves[randomIndex]);
