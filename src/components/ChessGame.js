@@ -1,20 +1,20 @@
 import { useState } from "react";
 import { Chessboard } from "react-chessboard";
-import { Chess } from "chess.js";
+import Chess from "chess.js";
 
 export const ChessGame = () => {
   const [game, setGame] = useState(new Chess());
 
   const makeAMove = (move) => {
-    const gameCopy = new Chess();
-    gameCopy.loadPgn(game.pgn());
-    gameCopy.move(move);
+    const gameCopy = { ...game };
+    const result = gameCopy.move(move);
     setGame(gameCopy);
+    return result;
   };
 
   const makeRandomMove = () => {
     const possibleMoves = game.moves();
-    if (game.isGameOver() || game.isDraw() || possibleMoves.length === 0)
+    if (game.game_over() || game.in_draw() || possibleMoves.length === 0)
       return; // exit if the game is over
     const randomIndex = Math.floor(Math.random() * possibleMoves.length);
     makeAMove(possibleMoves[randomIndex]);
