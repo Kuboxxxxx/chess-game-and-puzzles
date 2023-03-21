@@ -4,12 +4,12 @@ import { Chess } from "chess.js";
 
 export const ChessGame = () => {
   const [game, setGame] = useState(new Chess());
-  console.log(game);
+
   const makeAMove = (move) => {
-    // const gameCopy = { ...game };
-    const result = game.move(move);
-    setGame(result);
-    return result; // null if the move was illegal, the move object if the move was legal
+    const gameCopy = new Chess();
+    gameCopy.loadPgn(game.pgn());
+    gameCopy.move(move);
+    setGame(gameCopy);
   };
 
   const makeRandomMove = () => {
