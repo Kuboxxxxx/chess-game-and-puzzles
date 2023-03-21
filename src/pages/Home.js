@@ -30,7 +30,7 @@ export const Home = () => {
               pellentesque quis felis ultricies pulvinar.
             </Typography>
           </Box>
-          <Box>
+          <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
             <Link Link to="/playchess" style={{ textDecoration: "none" }}>
               <Button variant="contained" size="large">
                 Play Chess
