@@ -1,3 +1,9 @@
+import { ChessPuzzle } from "../components/ChessPuzzle";
+
 export const Puzzles = () => {
-  return <div>Puzzles</div>;
+  return (
+    <div>
+      <ChessPuzzle />
+    </div>
+  );
 };
