@@ -1,3 +1,7 @@
+import { UserCard } from "../components/UserCard";
+
 export const Users = () => {
-  return <div>Users</div>;
+  return <div>
+    <UserCard />
+  </div>;
 };
