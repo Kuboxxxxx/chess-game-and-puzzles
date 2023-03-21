@@ -5,11 +5,14 @@ import { Link } from "react-router-dom";
 export const Home = () => {
   return (
     <Container>
-      <Box>
+      <Box sx={{ display: "flex" }}>
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
+            width: "50%",
+            justifyContent: "space-evenly",
+            margin: "20px",
           }}
         >
           <Box>
@@ -43,7 +46,7 @@ export const Home = () => {
             </Link>
           </Box>
         </Box>
-        <Box sx={{ width: "50%" }}>
+        <Box sx={{ width: "50%", margin: "20px" }}>
           <Chessboard />
         </Box>
       </Box>
