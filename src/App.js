@@ -8,7 +8,7 @@ export const App = () => {
   return <div>
     <BrowserRouter>
     <NavigationBar />
-
+    
     <AppRoutes />
     </BrowserRouter>
   </div>;
