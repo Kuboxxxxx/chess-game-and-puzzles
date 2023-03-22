@@ -18,6 +18,22 @@ const validate = values => {
     return errors;
 };
 
+const nameCheck = (valueObject) => {
+    let checkExisting = JSON.parse(localStorage.getItem("userList")) || []
+    let currentNameArray = [valueObject]
+    // Compares current input with existing users
+    let result = checkExisting.filter(ExistName => currentNameArray.some(newName => ExistName.firstName === newName.firstName))
+    // Check if userlist exists, if not, fresh array
+    if(!checkExisting) checkExisting = [];
+    // If input name and localStorage name don't match, push new object
+    if(result.length == 0){
+        checkExisting.push(valueObject)
+        localStorage.setItem("userList", JSON.stringify(checkExisting))
+    }
+}
+
+
+
 export const UserSignup = () => {
     const formik = useFormik({
         initialValues: {
@@ -26,10 +42,7 @@ export const UserSignup = () => {
         },
         validate,
         onSubmit: values => {
-            let checkExisting = JSON.parse(localStorage.getItem("userList"))
-            if(checkExisting == null) checkExisting = [];
-                checkExisting.push(values)
-                localStorage.setItem("userList", JSON.stringify(checkExisting));
+            nameCheck(values)
         },
     });
     return (
