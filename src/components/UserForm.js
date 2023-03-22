@@ -1,4 +1,7 @@
-import React from 'react';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import { useFormik } from 'formik';
 
 const validate = values => {
@@ -26,7 +29,7 @@ const nameCheck = (valueObject) => {
     // Check if userlist exists, if not, fresh array
     if(!checkExisting) checkExisting = [];
     // If input name and localStorage name don't match, push new object
-    if(result.length == 0){
+    if(result.length === 0){
         checkExisting.push(valueObject)
         localStorage.setItem("userList", JSON.stringify(checkExisting))
     }
@@ -46,27 +49,50 @@ export const UserSignup = () => {
         },
     });
     return (
-        <form onSubmit={formik.handleSubmit}>
-            <label htmlFor="firstName">Name</label>
-            <input
-            id="firstName"
+        <Box
+        component="form"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          maxWidth: "400px",
+          p: 2,
+          alignItems: "center",
+          margin: "0 auto",
+        }}
+        onSubmit={formik.handleSubmit}
+      >
+            <TextField
+            helperText="Please enter your name"
+            id="demo-helper-text-aligned"
+            label="Name"
             name="firstName"
             type="text"
+            sx={{
+                display: "flex",
+                p: 2,
+                }}
             onChange={formik.handleChange}
             value={formik.values.firstName}
             />
             {formik.errors.firstName ? <div>{formik.errors.firstName}</div> : null}
     
-            <label htmlFor="elo">Elo</label>
-            <input
-            id="elo"
+            <TextField
+            helperText="Elo"
+            id="demo-helper-text-aligned-no-helper"
+            label="Elo"
             name="elo"
             type="number"
+            sx={{
+                display: "flex",
+                p: 2,
+                }}
             onChange={formik.handleChange}
             value={formik.values.elo}
             />
             {formik.errors.elo ? <div>{formik.errors.elo}</div> : null}
-            <button type="submit">Submit</button>
-        </form>
+            <Button size="medium"  variant="contained" color="success">
+                Submit
+            </Button>
+        </Box>
         );
     };
