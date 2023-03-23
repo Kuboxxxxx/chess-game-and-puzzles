@@ -30,11 +30,16 @@ const nameCheck = (valueObject) => {
     if(!checkExisting) checkExisting = [];
     // If input name and localStorage name don't match, push new object
     if(result.length === 0){
+        Object.assign(valueObject, {win: 0, loss: 0})
         checkExisting.push(valueObject)
         localStorage.setItem("userList", JSON.stringify(checkExisting))
     }
 }
 
+// IM SORRY THE PROPS ARE CONFUSING ME
+const refreshForm = () => {
+    window.location.reload(false)
+}
 
 
 export const UserSignup = () => {
@@ -46,6 +51,8 @@ export const UserSignup = () => {
         validate,
         onSubmit: values => {
             nameCheck(values)
+            //sorry ;c
+            refreshForm()
         },
     });
     return (
@@ -90,7 +97,7 @@ export const UserSignup = () => {
             value={formik.values.elo}
             />
             {formik.errors.elo ? <div>{formik.errors.elo}</div> : null}
-            <Button size="medium"  variant="contained" color="success">
+            <Button type="submit" size="medium"  variant="contained" color="success">
                 Submit
             </Button>
         </Box>
