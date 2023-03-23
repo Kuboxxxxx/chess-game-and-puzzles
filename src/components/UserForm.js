@@ -41,6 +41,13 @@ const refreshForm = () => {
     window.location.reload(false)
 }
 
+const textfieldStyling = {
+    "& label": {
+        marginLeft: "5%",
+    }
+};
+
+
 
 export const UserSignup = () => {
     const formik = useFormik({
@@ -77,6 +84,7 @@ export const UserSignup = () => {
             sx={{
                 display: "flex",
                 p: 2,
+                ...textfieldStyling
                 }}
             onChange={formik.handleChange}
             value={formik.values.firstName}
@@ -92,6 +100,7 @@ export const UserSignup = () => {
             sx={{
                 display: "flex",
                 p: 2,
+                ...textfieldStyling
                 }}
             onChange={formik.handleChange}
             value={formik.values.elo}
