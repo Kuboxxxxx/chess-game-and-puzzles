@@ -35,6 +35,11 @@ const nameCheck = (valueObject) => {
     }
 }
 
+const textfieldStyling = {
+    "& label": {
+        marginLeft: "5%",
+    }
+};
 
 
 export const UserSignup = () => {
@@ -70,6 +75,7 @@ export const UserSignup = () => {
             sx={{
                 display: "flex",
                 p: 2,
+                ...textfieldStyling
                 }}
             onChange={formik.handleChange}
             value={formik.values.firstName}
@@ -85,6 +91,7 @@ export const UserSignup = () => {
             sx={{
                 display: "flex",
                 p: 2,
+                ...textfieldStyling
                 }}
             onChange={formik.handleChange}
             value={formik.values.elo}
