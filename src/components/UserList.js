@@ -14,10 +14,10 @@ export const UserList = () => {
         < Container style={{ display: "flex", }}>
             {/* background: "purple" */}
             {userList.map((item, index) => (
-                <Card key={index} variant="outlined" sx={{ width: 1/4 , m: 1,}} style={{display: "flex"}}>
+                <Card key={index} variant="outlined" sx={{ width: 1/4 , m: 1,}} style={{display: "flex", boxShadow: "-1px 20px 30px -5px rgb(32, 32, 32)"}}>
 
 
-                    <CardContent style={{ background: '#c5d5cb', display: "flex",flexDirection: 'column', justifyContent: 'space-evenly', boxShadow: "-1px 40px 30px -12px rgb(32, 100, 100)"}}sx={{width: 3/5}}>
+                    <CardContent style={{ background: '#c5d5cb', display: "flex",flexDirection: 'column', justifyContent: 'space-evenly'}}sx={{width: 3/5}}>
                         <Typography sx={{ fontSize: 14, width: 1}} color="black" gutterBottom>
                             Name: {item.firstName} 
                                     

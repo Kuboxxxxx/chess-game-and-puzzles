@@ -80,9 +80,8 @@ export const UserSignup = () => {
             sx={{
                 display: "flex",
                 alignItems: "center",
-               
-                
-                }}
+                 }}
+            InputLabelProps={{style: {fontWeight: 'bold'}}} // font size of input label
             onChange={formik.handleChange}
             value={formik.values.firstName}
             />
@@ -98,9 +97,12 @@ export const UserSignup = () => {
                 margin: "25px auto",
                 display: "flex",
                 alignItems: "center",
+                color: "blue",
                 }}
             onChange={formik.handleChange}
             value={formik.values.elo}
+            InputLabelProps={{style: {fontWeight: 'bold'}}} // font size of input label
+            inputProps={{style: {fontSize: 14}}} // font size of input text
             />
             {formik.errors.elo ? <div>{formik.errors.elo}</div> : null}
             <Button type="submit" size="medium"  variant="contained" color="success" style={{background: "#e3e0cf", color: "black"}}>
