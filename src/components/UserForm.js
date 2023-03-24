@@ -64,7 +64,10 @@ export const UserSignup = () => {
           maxWidth: "400px",
           p: 2,
           alignItems: "center",
-          margin: "0 auto",
+          margin: "30px auto",
+          border: "2px solid #e3e0cf",
+         
+         
         }}
         onSubmit={formik.handleSubmit}
       >
@@ -76,7 +79,9 @@ export const UserSignup = () => {
             type="text"
             sx={{
                 display: "flex",
-                p: 2,
+                alignItems: "center",
+               
+                
                 }}
             onChange={formik.handleChange}
             value={formik.values.firstName}
@@ -90,16 +95,19 @@ export const UserSignup = () => {
             name="elo"
             type="number"
             sx={{
+                margin: "25px auto",
                 display: "flex",
-                p: 2,
+                alignItems: "center",
                 }}
             onChange={formik.handleChange}
             value={formik.values.elo}
             />
             {formik.errors.elo ? <div>{formik.errors.elo}</div> : null}
-            <Button type="submit" size="medium"  variant="contained" color="success">
+            <Button type="submit" size="medium"  variant="contained" color="success" style={{background: "#e3e0cf", color: "black"}}>
                 Submit
             </Button>
+
+            
         </Box>
         );
     };
