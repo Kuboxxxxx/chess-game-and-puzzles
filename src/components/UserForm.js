@@ -66,6 +66,8 @@ export const UserSignup = () => {
           alignItems: "center",
           margin: "30px auto",
           border: "2px solid #e3e0cf",
+          borderRadius: "20px",
+          boxShadow: "rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset",
          
          
         }}
@@ -80,6 +82,8 @@ export const UserSignup = () => {
             sx={{
                 display: "flex",
                 alignItems: "center",
+                marginTop:5,
+               
                  }}
             InputLabelProps={{style: {fontWeight: 'bold'}}} // font size of input label
             onChange={formik.handleChange}
@@ -97,7 +101,6 @@ export const UserSignup = () => {
                 margin: "25px auto",
                 display: "flex",
                 alignItems: "center",
-                color: "blue",
                 }}
             onChange={formik.handleChange}
             value={formik.values.elo}
@@ -105,7 +108,7 @@ export const UserSignup = () => {
             inputProps={{style: {fontSize: 14}}} // font size of input text
             />
             {formik.errors.elo ? <div>{formik.errors.elo}</div> : null}
-            <Button type="submit" size="medium"  variant="contained" color="success" style={{background: "#e3e0cf", color: "black"}}>
+            <Button type="submit" size="medium"  variant="contained" color="success" style={{background: "#e3e0cf", color: "black", marginBottom: "30px"}}>
                 Submit
             </Button>
 

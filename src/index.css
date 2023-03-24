@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 .chess {
@@ -9,3 +10,12 @@
   width: 35%;
 }
 
+.App{
+  font-family: "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,";
+  
+}
+
+body{
+  background-color: #CAC3B8
+
+}

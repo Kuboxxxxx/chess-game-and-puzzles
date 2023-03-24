@@ -4,6 +4,7 @@ import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import OtherHousesIcon from '@mui/icons-material/OtherHouses';
 import MenuBackground from '../img/menuimg.jpg'
 
 function handleClick(event) {
@@ -20,19 +21,21 @@ export const NavigationBar = () =>  {
                 border: 1,
                 p: 3,
                 boxShadow: 4,
-                fontWeight: 'bold'
+                     
             }}
             >
-                <Link to="/">
-                <HomeOutlinedIcon />
+                <Link to="/" style={{color: "black"}}>
+                <OtherHousesIcon />
+                
                 </Link>
-                <Link style={{ textDecoration: 'none' }}  color="inherit" Link to="/playchess">
+                <Link style={{ textDecoration: 'none',color: 'black',  '&:hover': {
+                    background: "#f00"},}}   color="inherit" Link to="/playchess">
                     Play
                 </Link>
-                <Link style={{ textDecoration: 'none' }} color="inherit" Link to="/puzzles">
+                <Link style={{ textDecoration: 'none',color: 'black'}} color="inherit" Link to="/puzzles">
                     Puzzles
                 </Link>
-                <Link style={{ textDecoration: 'none' }} color="inherit" Link to="/users">
+                <Link style={{ textDecoration: 'none',color: 'black'}} color="inherit" Link to="/users">
                     Users
                 </Link>
             </Breadcrumbs>
