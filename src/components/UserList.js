@@ -31,15 +31,16 @@ export const UserList = () => {
                         <Typography sx={{ mb: 1.5 }} color="black">
                             Elo: {item.elo}
                         </Typography>
-                        <Typography align="right" sx={{ mb: 1.5, }} color="text.secondary">
-                            Win: {item.win}
-                        </Typography>
-                        <Typography align="right" sx={{ mb: 1.5, }} color="text.secondary">
-                            Loss: {item.loss}
-                        </Typography>
+                        
                     </CardContent>
                     
-                    <CardContent style={{ background: '#9fa8a3', display: "flex",flexDirection: 'column', justifyContent: 'space-evenly'}}sx={{width: 2/5}}>
+                    <CardContent style={{ 
+                        background: '#9fa8a3', 
+                        display: "flex",
+                        flexDirection: 'column', 
+                        justifyContent: 'space-evenly'}}
+                        sx={{
+                            width: 2/5}}>
                         <Typography top="0" sx={{ mb: 1, width: 1}} color="black">
                             Win: {item.win}
                         </Typography>
