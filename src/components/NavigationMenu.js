@@ -23,16 +23,21 @@ export const NavigationBar = () =>  {
                 fontWeight: 'bold'
             }}
             >
-                <Link to="/">
+                <Link to="/" style={{color: "black"}}>
                 <HomeOutlinedIcon />
                 </Link>
-                <Link style={{ textDecoration: 'none' }}  color="inherit" Link to="/playchess">
+                <Link style={{ 
+                    textDecoration: 'none',
+                    color: 'black',  '&:hover': {
+                    background: "#f00"},}}   
+                    color="inherit" 
+                    Link to="/playchess">
                     Play
                 </Link>
-                <Link style={{ textDecoration: 'none' }} color="inherit" Link to="/puzzles">
+                <Link style={{ textDecoration: 'none',color: 'black'}} color="inherit" Link to="/puzzles">
                     Puzzles
                 </Link>
-                <Link style={{ textDecoration: 'none' }} color="inherit" Link to="/users">
+                <Link style={{ textDecoration: 'none',color: 'black'}} color="inherit" Link to="/users">
                     Users
                 </Link>
             </Breadcrumbs>
