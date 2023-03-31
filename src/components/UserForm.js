@@ -33,12 +33,8 @@ const nameCheck = (valueObject) => {
         Object.assign(valueObject, {win: 0, loss: 0})
         checkExisting.push(valueObject)
         localStorage.setItem("userList", JSON.stringify(checkExisting))
+        
     }
-}
-
-// IM SORRY THE PROPS ARE CONFUSING ME
-const refreshForm = () => {
-    window.location.reload(false)
 }
 
 const textfieldStyling = {
@@ -49,7 +45,7 @@ const textfieldStyling = {
 
 
 
-export const UserSignup = () => {
+export const UserSignup = ({setNewUser}) => {
     const formik = useFormik({
         initialValues: {
             firstName: '',
@@ -58,8 +54,8 @@ export const UserSignup = () => {
         validate,
         onSubmit: values => {
             nameCheck(values)
-            //sorry ;c
-            refreshForm()
+            const checkforUpdate = JSON.parse(localStorage.getItem("userList")) || [];
+            setNewUser(checkforUpdate)
         },
     });
     return (
