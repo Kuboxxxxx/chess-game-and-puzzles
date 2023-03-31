@@ -35,12 +35,24 @@ export const Home = () => {
           </Box>
           <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
             <Link Link to="/playchess" style={{ textDecoration: "none" }}>
-              <Button variant="contained" size="large">
+              <Button 
+              variant="contained" 
+              size="large" 
+              style={{
+                background: "#839A9B", 
+                color: "black", 
+                fontWeight:"bold"}} >
                 Play Chess
               </Button>
             </Link>
             <Link Link to="/puzzles" style={{ textDecoration: "none" }}>
-              <Button variant="contained" size="large">
+              <Button 
+              variant="contained" 
+              size="large"
+              style={{
+                background: "#839A9B", 
+                color: "black", 
+                fontWeight:"bold"}}>
                 Solve Puzzles
               </Button>
             </Link>
