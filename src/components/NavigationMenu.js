@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 import * as React from 'react';
-import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import MenuBackground from '../img/menuimg.jpg'
