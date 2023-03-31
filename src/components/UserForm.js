@@ -83,6 +83,7 @@ export const UserSignup = ({setNewUser}) => {
             sx={{
                 display: "flex",
                 p: 2,
+                m: 1,
                 ...textfieldStyling
                 }}
             InputLabelProps={{style: {fontWeight: 'bold'}}}
@@ -100,10 +101,11 @@ export const UserSignup = ({setNewUser}) => {
             sx={{
                 display: "flex",
                 p: 2,
+                m: 3,
                 ...textfieldStyling
                 }}
             InputLabelProps={{style: {fontWeight: 'bold'}}}
-            inputProps={{style: {fontSize: 14}}}
+            
             onChange={formik.handleChange}
             value={formik.values.elo}
             />
