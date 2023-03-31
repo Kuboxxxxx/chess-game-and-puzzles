@@ -2,17 +2,29 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import { Container } from "@mui/material";
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+// import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
 
-export const UserCard = ({ user }) => {
+export const UserCard = ({ user, currentUser, setCurrentUser }) => {
+
+    const handleSetUser = ({ setCurrentUser, user }) => {
+        let userFind = user
+        
+        console.log(userFind)
+        
+    }
+
 
 
     return(
-        <Card variant="outlined" sx={{ 
+        <Card key={user.id} variant="outlined" sx={{ 
             width: 1/4,
             m: 1}}
             style={{
                 display: "flex", 
-                boxShadow: "-1px 20px 30px -5px rgb(32, 32, 32)"
+                boxShadow: "-1px 20px 30px -5px rgb(32, 32, 32)",
+                position: "relative"
             }}>
             <CardContent style={{ 
                 background: '#c5d5cb', 
@@ -43,6 +55,11 @@ export const UserCard = ({ user }) => {
                     Loss: {user.loss}
                 </Typography>
             </CardContent>
+            <Container style={{
+                position: "absolute",
+                bottom: 0,
+                left: "60%",
+            }}> <button onClick={handleSetUser}>Select</button> <DeleteOutlineIcon/> </Container>
         </Card>
     );
 
