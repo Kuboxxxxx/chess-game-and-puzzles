@@ -4,9 +4,9 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Container } from "@mui/material";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-// import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
+import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
 
-export const UserCard = ({ user, userid, currentUser, setCurrentUser }) => {
+export const UserCard = ({ user, userid, currentUser, setCurrentUser, setNewUser }) => {
 
     const handleSetUser = () => {
         // Get the userlist from localStorage
@@ -21,6 +21,14 @@ export const UserCard = ({ user, userid, currentUser, setCurrentUser }) => {
         setCurrentUser(result)
     }
 
+    const handleDeleteUser = () => {
+        const checkExisting = JSON.parse(localStorage.getItem("userList")) || []
+        const idAsArray = [userid]
+        const result = checkExisting.filter(listObj => idAsArray.some(idObj => listObj.id !== idObj ))
+        localStorage.setItem("userList", JSON.stringify(result))
+        setNewUser(result)
+    }
+
 
 
     return(
@@ -30,7 +38,8 @@ export const UserCard = ({ user, userid, currentUser, setCurrentUser }) => {
             style={{
                 display: "flex", 
                 boxShadow: "-1px 20px 30px -5px rgb(32, 32, 32)",
-                position: "relative"
+                position: "relative",
+                flexWrap: "wrap"
             }}>
             <CardContent style={{ 
                 background: '#c5d5cb', 
@@ -64,8 +73,8 @@ export const UserCard = ({ user, userid, currentUser, setCurrentUser }) => {
             <Container style={{
                 position: "absolute",
                 bottom: 0,
-                left: "60%",
-            }}> <button onClick={handleSetUser}>Select</button> <DeleteOutlineIcon/> </Container>
+                left: "-5%",
+            }}> <button onClick={handleSetUser}><DoneOutlineIcon /></button> <button onClick={handleDeleteUser}><DeleteOutlineIcon /></button>  </Container>
         </Card>
     );
 
