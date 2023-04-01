@@ -13,11 +13,6 @@ const validate = values => {
         errors.firstName = 'Must be 15 characters or less';
     }
 
-    if (!values.elo) {
-        errors.elo = 'Required';
-    } else if (values.elo.length > 20) {
-        errors.elo = 'Must be 20 characters or less';
-    }
 
     return errors;
 };
@@ -32,6 +27,9 @@ const nameCheck = (valueObject) => {
     // If input name and localStorage name don't match, push new object
     if(result.length === 0){
         Object.assign(valueObject, {win: 0, loss: 0, id: uuid()})
+        if(!valueObject.elo){
+            Object.assign(valueObject,{elo: 400})
+        }
         checkExisting.push(valueObject)
         localStorage.setItem("userList", JSON.stringify(checkExisting))
         
