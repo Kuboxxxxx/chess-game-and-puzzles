@@ -8,7 +8,7 @@ export const Users = ({ user, setNewUser, currentUser, setCurrentUser }) => {
     <Container style={{ display: "flex", marginTop: "60px"}}>
       
       {user.map((user) => (
-        <UserCard key={user.id} user={user} currentUser={currentUser} setCurrentUser={setCurrentUser} />
+        <UserCard key={user.id} userid={user.id} user={user} currentUser={currentUser} setCurrentUser={setCurrentUser} />
       ))}
       
         </Container>

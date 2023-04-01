@@ -6,13 +6,19 @@ import { Container } from "@mui/material";
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 // import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
 
-export const UserCard = ({ user, currentUser, setCurrentUser }) => {
+export const UserCard = ({ user, userid, currentUser, setCurrentUser }) => {
 
-    const handleSetUser = ({ setCurrentUser, user }) => {
-        let userFind = user
-        
-        console.log(userFind)
-        
+    const handleSetUser = () => {
+        // Get the userlist from localStorage
+        const checkExisting = JSON.parse(localStorage.getItem("userList")) || []
+        // Take the uuid and treat it as an array
+        const idAsArray = [userid]
+        // Filter through userlist with the uuid 
+        const result = checkExisting.filter(listObj => idAsArray.some(idObj => listObj.id === idObj ))
+        // Set result in localStorage so that it auto sets on site load
+        localStorage.setItem("currentUser", JSON.stringify(result))
+        // Set result in to state as the current user
+        setCurrentUser(result)
     }
 
 
