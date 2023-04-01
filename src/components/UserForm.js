@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useFormik } from 'formik';
+import { v4 as uuid } from 'uuid';
 
 const validate = values => {
     const errors = {};
@@ -30,7 +31,7 @@ const nameCheck = (valueObject) => {
     if(!checkExisting) checkExisting = [];
     // If input name and localStorage name don't match, push new object
     if(result.length === 0){
-        Object.assign(valueObject, {win: 0, loss: 0})
+        Object.assign(valueObject, {win: 0, loss: 0, id: uuid()})
         checkExisting.push(valueObject)
         localStorage.setItem("userList", JSON.stringify(checkExisting))
         
