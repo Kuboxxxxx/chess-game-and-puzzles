@@ -45,7 +45,7 @@ export const UserCard = ({ user, userid, currentUser, setCurrentUser, setNewUser
 
 
     return(
-        <Card key={user.id} variant="outlined" sx={{ 
+        <Card id="card" key={user.id} variant="outlined" sx={{ 
             width: 1/4,
             m: 1}}
             style={{

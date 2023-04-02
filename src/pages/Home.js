@@ -17,20 +17,10 @@ export const Home = () => {
         >
           <Box>
             <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              eu augue dui. Sed maximus justo leo, quis accumsan leo efficitur
-              a. Praesent vehicula ex at libero varius dapibus. Donec posuere
-              lacus id urna efficitur, sit amet tincidunt nisl interdum. Nunc
-              sed arcu metus. Proin blandit lorem eget nisi malesuada, ut
-              dignissim felis tristique. Etiam quam felis, suscipit sit amet
-              fermentum eget, convallis ac tortor. Vestibulum ante ipsum primis
-              in faucibus orci luctus et ultrices posuere cubilia curae; Donec
-              dolor diam, tempor eget auctor at, laoreet et libero. Proin et
-              tellus ut turpis interdum cursus sit amet ut nulla. Cras a
-              suscipit sem. Fusce egestas, erat dictum vehicula pulvinar, mauris
-              tellus iaculis nulla, eu consectetur quam tellus eu lacus. Etiam
-              vehicula viverra augue, suscipit dictum diam ornare eu. Nulla
-              pellentesque quis felis ultricies pulvinar.
+            <h1>What Is Chess?</h1>
+            <div>Chess is a board game played between two players that simulates a war between two kingdoms. It is one of the most popular games in the world. Millions of people play it both recreationally and competitively.</div>
+            <div>Chess training and practice supports the development of higher-order thinking skills—like problem solving, decision making, critical thinking, planning, and even creative thinking. Chess training and practice also helps improve general cognitive ability and scholastic achievement—especially in mathematics.</div>
+            <div>Chess has been proven to increase your IQ, improve memory function, help develop higher levels of creativity, simultaneously exercise both sides of the brain, help prevent Alzheimer's and dementia, and increase a child's problem solving skills.</div>
             </Typography>
           </Box>
           <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>

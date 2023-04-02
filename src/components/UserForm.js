@@ -109,13 +109,23 @@ export const UserSignup = ({setNewUser}) => {
             value={formik.values.elo}
             />
             {formik.errors.elo ? <div>{formik.errors.elo}</div> : null}
-            <Button type="submit" size="medium"  variant="contained" color="success"
+            <Button type="submit" size="medium"  variant="contained" 
             style={{
-                background: "#e3e0cf", 
+                background: "#839A9B", 
                 color: "black", 
-                marginBottom: "30px"}}>
+                marginBottom: "30px",
+                fontWeight:"bold"}}>
                 Submit
             </Button>
         </Box>
         );
     };
+                <Button 
+              variant="contained" 
+              size="large"
+              style={{
+                background: "#839A9B", 
+                color: "black", 
+                fontWeight:"bold"}}>
+                Solve Puzzles
+              </Button>
