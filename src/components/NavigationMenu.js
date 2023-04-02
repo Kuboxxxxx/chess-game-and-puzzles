@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import * as React from 'react';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import OtherHousesIcon from '@mui/icons-material/OtherHouses';
 import MenuBackground from '../img/menuimg.jpg'
 
 function handleClick(event) {
@@ -23,20 +23,20 @@ export const NavigationBar = () =>  {
             }}
             >
                 <Link to="/" style={{color: "black"}}>
-                <HomeOutlinedIcon />
+                <OtherHousesIcon />
                 </Link>
                 <Link style={{ 
                     textDecoration: 'none',
-                    color: 'black',  '&:hover': {
+                    color: '#463730',  '&:hover': {
                     background: "#f00"},}}   
                     color="inherit" 
                     Link to="/playchess">
                     Play
                 </Link>
-                <Link style={{ textDecoration: 'none',color: 'black'}} color="inherit" Link to="/puzzles">
+                <Link style={{ textDecoration: 'none',color: '#463730'}} color="inherit" Link to="/puzzles">
                     Puzzles
                 </Link>
-                <Link style={{ textDecoration: 'none',color: 'black'}} color="inherit" Link to="/users">
+                <Link style={{ textDecoration: 'none',color: '#463730'}} color="inherit" Link to="/users">
                     Users
                 </Link>
             </Breadcrumbs>
