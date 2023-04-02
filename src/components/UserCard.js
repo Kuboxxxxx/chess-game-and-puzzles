@@ -25,8 +25,21 @@ export const UserCard = ({ user, userid, currentUser, setCurrentUser, setNewUser
         const checkExisting = JSON.parse(localStorage.getItem("userList")) || []
         const idAsArray = [userid]
         const result = checkExisting.filter(listObj => idAsArray.some(idObj => listObj.id !== idObj ))
-        localStorage.setItem("userList", JSON.stringify(result))
-        setNewUser(result)
+
+        const checkCurrent = JSON.parse(localStorage.getItem("currentUser")) || []
+        const compareCurrent = checkCurrent.filter(currentSelect => idAsArray.some(idObj => currentSelect.id === idObj))
+        // Remove state and LS of current user if the profile they're deleting is the one they're logged on to
+        if(compareCurrent.length === 0) {
+            localStorage.setItem("userList", JSON.stringify(result))
+            setNewUser(result)
+            
+        }
+        else {
+            localStorage.setItem("currentUser", JSON.stringify([]))
+            setCurrentUser("")
+            setNewUser(result)
+
+        }
     }
 
 
