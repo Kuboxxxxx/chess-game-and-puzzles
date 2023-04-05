@@ -11,7 +11,14 @@ export const Users = ({ user, setNewUser, currentUser, setCurrentUser }) => {
       textAlign: "center",
     }}>
     {getCurrentUser.length === 0 ? (
-        <Container>No user selected</Container>
+        <Container style={{
+          display: "flex",
+          fontWeight: "bold",
+          fontSize: "30px",
+          margin: "30px auto",
+          justifyContent: "center",
+          }}
+        >No user selected!</Container>
       ) : (
         <Container style={{
           display: "flex",
