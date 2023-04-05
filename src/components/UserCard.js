@@ -36,6 +36,7 @@ export const UserCard = ({ user, userid, currentUser, setCurrentUser, setNewUser
         }
         else {
             localStorage.setItem("currentUser", JSON.stringify([]))
+            localStorage.setItem("userList", JSON.stringify(result))
             setCurrentUser("")
             setNewUser(result)
 
