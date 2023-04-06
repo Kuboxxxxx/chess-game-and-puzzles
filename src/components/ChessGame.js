@@ -18,7 +18,7 @@ export const ChessGame = ({ currentUser, setCurrentUser, setNewUser }) => {
   const makeRandomMove = () => {
     const possibleMoves = game.moves();
 
-    if (possibleMoves.length === 0) {
+    if (possibleMoves.length === 0 && getCurrentUser.length != 0) {
       getCurrentUser[0].win++
       getCurrentUser[0].elo += 14
       localStorage.setItem("currentUser", JSON.stringify(getCurrentUser))
@@ -28,6 +28,8 @@ export const ChessGame = ({ currentUser, setCurrentUser, setNewUser }) => {
       checkExisting[objIndex].elo += 14
       localStorage.setItem("userList", JSON.stringify(checkExisting))
       setNewUser(checkExisting)
+    } else if (possibleMoves.length === 0) {
+      return;
     }
 
     if (game.in_draw()) {
