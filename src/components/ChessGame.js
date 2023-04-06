@@ -6,7 +6,7 @@ export const ChessGame = ({ currentUser, setCurrentUser, setNewUser }) => {
   const [game, setGame] = useState(new Chess());
   const getCurrentUser = JSON.parse(localStorage.getItem("currentUser")) || []
   const checkExisting = JSON.parse(localStorage.getItem("userList")) || []
-  const userid = getCurrentUser[0].id
+  const userid = getCurrentUser[0]?.id
 
   const makeAMove = (move) => {
     const gameCopy = { ...game };
