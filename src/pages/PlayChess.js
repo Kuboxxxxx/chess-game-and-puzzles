@@ -5,11 +5,11 @@ import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 
 
-export const PlayChess = () => {
+export const PlayChess = ({currentUser, setCurrentUser, setNewUser}) => {
   let getCurrentUser = JSON.parse(localStorage.getItem("currentUser")) || []
   return (
     <div>
-      <ChessGame />
+      <ChessGame setNewUser={setNewUser} currentUser={currentUser} setCurrentUser={setCurrentUser} />
       <Container style={{
       display: "flex",
       textAlign: "center",
