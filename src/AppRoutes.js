@@ -12,7 +12,7 @@ export const AppRoutes = ({ user, setNewUser, currentUser, setCurrentUser }) => 
 
       <Route path="/" element={<Home />} />
 
-      <Route path="/playchess" element={<PlayChess />} />
+      <Route path="/playchess" element={<PlayChess setNewUser={setNewUser} currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
 
       <Route path="/puzzles" element={<Puzzles />} />
 

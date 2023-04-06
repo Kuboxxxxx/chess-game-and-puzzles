@@ -2,8 +2,11 @@ import { useState } from "react";
 import { Chessboard } from "react-chessboard";
 import Chess from "chess.js";
 
-export const ChessGame = () => {
+export const ChessGame = ({ currentUser, setCurrentUser, setNewUser }) => {
   const [game, setGame] = useState(new Chess());
+  const getCurrentUser = JSON.parse(localStorage.getItem("currentUser")) || []
+  const checkExisting = JSON.parse(localStorage.getItem("userList")) || []
+  const userid = getCurrentUser[0].id
 
   const makeAMove = (move) => {
     const gameCopy = { ...game };
@@ -14,8 +17,23 @@ export const ChessGame = () => {
 
   const makeRandomMove = () => {
     const possibleMoves = game.moves();
-    if (game.game_over() || game.in_draw() || possibleMoves.length === 0)
-      return; // exit if the game is over
+
+    if (possibleMoves.length === 0) {
+      getCurrentUser[0].win++
+      getCurrentUser[0].elo += 14
+      localStorage.setItem("currentUser", JSON.stringify(getCurrentUser))
+      setCurrentUser(getCurrentUser)
+      const objIndex = checkExisting.findIndex((obj => obj.id == userid))
+      checkExisting[objIndex].win++
+      checkExisting[objIndex].elo += 14
+      localStorage.setItem("userList", JSON.stringify(checkExisting))
+      setNewUser(checkExisting)
+    }
+
+    if (game.in_draw()) {
+      return;
+    }
+    
     const randomIndex = Math.floor(Math.random() * possibleMoves.length);
     makeAMove(possibleMoves[randomIndex]);
   };
